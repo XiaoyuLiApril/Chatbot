@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择头像</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="avatar-selection-container">
+        <h1>请选择实验头像</h1>
+        <div class="avatar-grid">
+            <div class="avatar" onclick="selectAvatar('realism-high')">
+                <img src="realism-high.png" alt="realism-high">
+                <p>realism-high</p>
+            </div>
+            <div class="avatar" onclick="selectAvatar('realism-low')">
+                <img src="realism-low.png" alt="realism-low">
+                <p>realism-low</p>
+            </div>
+            <div class="avatar" onclick="selectAvatar('cartoon-high')">
+                <img src="cartoon-high.png" alt="cartoon-high">
+                <p>cartoon-high</p>
+            </div>
+            <div class="avatar" onclick="selectAvatar('cartoon-low')">
+                <img src="cartoon-low.png" alt="cartoon-low">
+                <p>cartoon-low</p>
+            </div>
+        </div>
+    </div>
+        
+
+    <script>
+        // 保存选择的头像并跳转到中间页面
+        function selectAvatar(avatarName) {
+            localStorage.setItem('selectedAvatar', avatarName); // 仅保存头像名称，不保存路径
+            window.location.href = 'middle.html'; // 跳转到中间页面
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开始聊天</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="middle-container">
+        <div class="selected-avatar">
+            <!-- 全身图展示 -->
+            <img id="selected-avatar" src="" alt="选定的全身头像">
+        </div>
+        <button class="start-chat-btn" onclick="startChat()">开始聊天</button>
+    </div>
+
+    <script>
+        // 从 localStorage 获取选定的头像名称
+        const selectedAvatar = localStorage.getItem('selectedAvatar');
+        if (selectedAvatar) {
+            // 设置全身图路径
+            document.getElementById('selected-avatar').src = `${selectedAvatar}.png`;
+        } else {
+            alert('未选择头像，请返回选择页面！');
+            window.location.href = 'index.html'; // 跳转到选择页面
+        }
+
+        // 跳转到聊天页面
+        function startChat() {
+            window.location.href = 'chat.html'; // 跳转到聊天页面
+        }
+    </script>
+</body>
+</html>
+
